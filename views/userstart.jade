@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1 Herzlich willkommen #{user.local.username}
+  p Sie haben die Email: #{user.local.email}
+  
+  form#formUpdateEmail(name="updateemail",method="post",action="/updateemail")
+    input#inputUserEmail(type="email", placeholder="email", name="email")
+    button#btnSubmit(type="submit") submit
+  
+  form#formDeleteUser(name="deleteuser",method="post",action="/deleteuser")
+    button#btnSubmit(type="submit") Benutzer l&ouml;schen
